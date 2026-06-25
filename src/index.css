@@ -122,8 +122,6 @@ a { color: inherit; text-decoration: none; }
   text-align: center;
   color: #fff;
   background: #1a1d22;
-  border-top: 3px solid var(--blue);
-  border-bottom: 3px solid var(--blue);
   overflow: hidden;
 }
 /* Background lives on its own layer, taller than the hero so it can travel. */
@@ -218,7 +216,9 @@ a { color: inherit; text-decoration: none; }
 /* Section images (real photo first, gradient as graceful fallback) */
 .media-wwd  { background-image: url("/assets/what-we-do.jpg"),           linear-gradient(135deg,#34373d,#1f2228); }
 .media-hww  { background-image: url("/assets/how-we-work.jpg"),          linear-gradient(135deg,#34373d,#1f2228); }
-.media-why  { background-image: url("/assets/why-we-are-different.jpg"), linear-gradient(135deg,#34373d,#1f2228); filter: none; }
+.media-why  { background-image: url("/assets/why-we-are-different.jpg"), linear-gradient(135deg,#34373d,#1f2228); }
+/* Keep this image black & white even on hover */
+.media-why:hover { filter: grayscale(100%) contrast(1.02); }
 .media-talk { background-image: url("/assets/lets-talk.jpg"),            linear-gradient(135deg,#34373d,#1f2228); }
 
 .split-body {
