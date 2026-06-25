@@ -9,8 +9,8 @@ export default function Header() {
   return (
     <header className="site-header">
       <div className="container nav-inner">
-        <a href="#hero" className="brand">
-          {brand.name} <span>{brand.accent}</span>
+        <a href="#hero" className="brand" aria-label={`${brand.name} ${brand.accent}`}>
+          <img className="brand-logo" src="/assets/logo.png" alt={`${brand.name} ${brand.accent}`} />
         </a>
 
         <button
