@@ -218,7 +218,7 @@ a { color: inherit; text-decoration: none; }
 /* Section images (real photo first, gradient as graceful fallback) */
 .media-wwd  { background-image: url("/assets/what-we-do.jpg"),           linear-gradient(135deg,#34373d,#1f2228); }
 .media-hww  { background-image: url("/assets/how-we-work.jpg"),          linear-gradient(135deg,#34373d,#1f2228); }
-.media-why  { background-image: url("/assets/why-we-are-different.jpg"), linear-gradient(135deg,#34373d,#1f2228); }
+.media-why  { background-image: url("/assets/why-we-are-different.jpg"), linear-gradient(135deg,#34373d,#1f2228); filter: none; }
 .media-talk { background-image: url("/assets/lets-talk.jpg"),            linear-gradient(135deg,#34373d,#1f2228); }
 
 .split-body {
