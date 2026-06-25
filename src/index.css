@@ -316,19 +316,6 @@ a { color: inherit; text-decoration: none; }
 }
 .partner-logo:hover img { filter: grayscale(0); opacity: 1; }
 
-/* ---------- Footer ---------- */
-.site-footer { border-top: 1px solid var(--line); padding: 34px 0; }
-.site-footer .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-}
-.site-footer p { color: var(--muted); font-size: .85rem; }
-.footer-links { display: flex; gap: 22px; }
-.footer-links a { color: var(--muted); font-size: .85rem; transition: color .2s; }
-.footer-links a:hover { color: var(--maroon); }
-
 /* ---------- Scroll reveal ---------- */
 .reveal {
   opacity: 0;

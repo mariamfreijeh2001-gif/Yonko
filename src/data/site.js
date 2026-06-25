@@ -44,11 +44,3 @@ export const contact = {
   email: "info@yonkocapital.com",
   linkedin: "https://www.linkedin.com/company/yonkocapital/",
 };
-
-export const footer = {
-  links: [
-    { label: "Privacy Policy", href: "#" },
-    { label: "Terms", href: "#" },
-    { label: "Back to top ↑", href: "#hero" },
-  ],
-};

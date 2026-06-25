@@ -6,7 +6,6 @@ import HowWeWork from "./components/HowWeWork";
 import Differentiators from "./components/Differentiators";
 import Contact from "./components/Contact";
 import Partners from "./components/Partners";
-import Footer from "./components/Footer";
 
 export default function App() {
   return (
@@ -21,7 +20,6 @@ export default function App() {
         <Contact />
         <Partners />
       </main>
-      <Footer />
     </>
   );
 }
