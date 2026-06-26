@@ -26,7 +26,10 @@ export default function useScrollSpy(hrefs) {
 
     sections.forEach((s) => observer.observe(s));
     return () => observer.disconnect();
-  }, [hrefs]);
+    // Depend on the stable joined string, not the array identity, so the
+    // observer isn't rebuilt on every render.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [hrefs.join(",")]);
 
   return active;
 }
