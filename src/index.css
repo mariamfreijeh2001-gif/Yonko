@@ -123,6 +123,7 @@ a { color: inherit; text-decoration: none; }
   position: absolute;
   top: -18%; left: 0; right: 0; bottom: -18%;
   background: #1a1d22 url("/assets/hero.jpg") center/cover no-repeat;
+  filter: grayscale(100%) contrast(1.02);
   transform: translate3d(0, 0, 0) scale(1.05);
   will-change: transform;
   z-index: 0;
@@ -203,16 +204,12 @@ a { color: inherit; text-decoration: none; }
   background-size: cover;
   background-position: center;
   filter: grayscale(100%) contrast(1.02);
-  transition: filter .6s ease;
 }
-.split-media:hover { filter: grayscale(0) contrast(1); }
 
 /* Section images (real photo first, gradient as graceful fallback) */
 .media-wwd  { background-image: url("/assets/what-we-do.jpg"),           linear-gradient(135deg,#34373d,#1f2228); }
 .media-hww  { background-image: url("/assets/how-we-work.jpg"),          linear-gradient(135deg,#34373d,#1f2228); }
 .media-why  { background-image: url("/assets/why-we-are-different.jpg"), linear-gradient(135deg,#34373d,#1f2228); }
-/* Keep this image black & white even on hover */
-.media-why:hover { filter: grayscale(100%) contrast(1.02); }
 .media-talk { background-image: url("/assets/lets-talk.jpg"),            linear-gradient(135deg,#34373d,#1f2228); }
 
 .split-body {
