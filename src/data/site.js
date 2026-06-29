@@ -13,8 +13,12 @@ export const nav = [
 
 export const hero = {
   title: "Trust. Trigger. Transform.",
-  subtitle:
-    "Yonko Capital is a discreet Emirati partner and trusted advisor to family offices and private investors, delivering end-to-end solutions across complex situations.",
+  // Two parts: on desktop they break into exactly 2 lines; on mobile the break
+  // is hidden so the text flows and wraps naturally.
+  subtitle: [
+    "Yonko Capital is a discreet Emirati partner and trusted advisor to family offices",
+    "and private investors, delivering end-to-end solutions across complex situations.",
+  ],
 };
 
 export const trustedPartner = {

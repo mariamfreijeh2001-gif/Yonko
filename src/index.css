@@ -142,7 +142,7 @@ a { color: inherit; text-decoration: none; }
   position: relative;
   z-index: 2;
   width: 100%;
-  max-width: 640px;
+  max-width: 860px;
   min-width: 0;        /* allow the content to shrink/wrap within the viewport */
   padding: 40px 20px;
   will-change: transform, opacity;
@@ -162,6 +162,7 @@ a { color: inherit; text-decoration: none; }
   max-width: 800px; /* keeps the subtitle to 2 lines on desktop */
   margin: 0 auto;
 }
+.hero-break { display: inline; } /* desktop: forces the 2-line break */
 
 .scroll-cue {
   position: absolute;
@@ -319,6 +320,9 @@ a { color: inherit; text-decoration: none; }
   object-fit: contain;
 }
 .partner-logo:hover { transform: scale(1.06); }
+/* A single wide logo (ADIO) rendered larger so its fine text reads clearly */
+.partners .partner-logo--lg { width: 270px; }
+.partners .partner-logo--lg img { max-height: 92px; max-width: 250px; }
 
 /* ---------- Scroll reveal ---------- */
 .reveal {
@@ -349,6 +353,7 @@ a { color: inherit; text-decoration: none; }
   .hero-content { padding: 40px 24px; }
   .hero-content h1 { font-size: clamp(1.15rem, 5vw, 1.7rem); letter-spacing: -.2px; }
   .hero-content p { font-size: .85rem; line-height: 1.5; }
+  .hero-break { display: none; } /* mobile: let the subtitle wrap naturally */
 
   .split, .split.reverse { grid-template-columns: 1fr; min-height: 0; }
   .split-media { display: none; }
@@ -360,6 +365,8 @@ a { color: inherit; text-decoration: none; }
   .partner-logo { width: 142px; height: 58px; }
   .partner-logo img { max-height: 46px; max-width: 118px; }
   .marquee-track { gap: 26px; padding-right: 26px; }
+  .partners .partner-logo--lg { width: 200px; }
+  .partners .partner-logo--lg img { max-height: 64px; max-width: 184px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

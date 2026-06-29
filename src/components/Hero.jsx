@@ -10,7 +10,7 @@ export default function Hero() {
       <div className="hero-overlay"></div>
       <div className="hero-content" ref={contentRef}>
         <h1>{hero.title}</h1>
-        <p>{hero.subtitle}</p>
+        <p>{hero.subtitle[0]}{" "}<br className="hero-break" />{hero.subtitle[1]}</p>
       </div>
       <a className="scroll-cue" href="#what-we-do" aria-label="Scroll to content">
         <span className="scroll-cue-mouse"><span className="scroll-cue-dot"></span></span>

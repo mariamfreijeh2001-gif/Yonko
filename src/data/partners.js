@@ -23,6 +23,7 @@ export const partners = [
     name: "Abu Dhabi Investment Office (ADIO)",
     url: "https://www.investwithabudhabi.com/",
     logo: "/assets/partners/ADIO_logo.png",
+    big: true, // wide logo with fine text — render larger so it reads clearly
   },
   {
     name: "Abu Dhabi Global Market (ADGM)",
