@@ -1,8 +1,11 @@
 import { partners, partnersHeading } from "../data/partners";
 import Reveal from "./Reveal";
 
-// One logo link. The duplicated track is aria-hidden so screen readers
-// only announce the partners once.
+// Repeat the set enough times that one track is always wider than the viewport,
+// so the marquee stays continuously filled (no empty gaps) — logos repeat on
+// the line as needed.
+const REPEATS = 3;
+
 const Logo = ({ partner, hidden }) => (
   <a
     className="partner-logo"
@@ -17,6 +20,20 @@ const Logo = ({ partner, hidden }) => (
   </a>
 );
 
+// `muted` tracks are duplicates used only for the seamless loop; everything in
+// them is hidden from assistive tech so partners are announced once.
+function Track({ muted }) {
+  return (
+    <div className="marquee-track" aria-hidden={muted || undefined}>
+      {Array.from({ length: REPEATS }).flatMap((_, r) =>
+        partners.map((p, i) => (
+          <Logo key={`${r}-${i}`} partner={p} hidden={muted || r > 0} />
+        ))
+      )}
+    </div>
+  );
+}
+
 export default function Partners() {
   return (
     <section className="partners" id="partners">
@@ -25,14 +42,9 @@ export default function Partners() {
         <Reveal as="span" className="rule center-rule" delay={120} />
       </div>
 
-      {/* Two identical tracks scroll side-by-side for a seamless loop. */}
       <div className="marquee">
-        <div className="marquee-track">
-          {partners.map((p) => <Logo key={p.name} partner={p} />)}
-        </div>
-        <div className="marquee-track" aria-hidden="true">
-          {partners.map((p) => <Logo key={p.name + "-dup"} partner={p} hidden />)}
-        </div>
+        <Track />
+        <Track muted />
       </div>
     </section>
   );

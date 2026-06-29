@@ -24,7 +24,7 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 
 body {
   font-family: var(--sans);
@@ -32,6 +32,7 @@ body {
   background: var(--bg);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden; /* guard against any horizontal scroll */
 }
 
 img { max-width: 100%; display: block; }
@@ -138,14 +139,17 @@ a { color: inherit; text-decoration: none; }
 .hero-content {
   position: relative;
   z-index: 2;
+  width: 100%;
   max-width: 640px;
+  min-width: 0;        /* allow the content to shrink/wrap within the viewport */
   padding: 40px 20px;
   will-change: transform, opacity;
 }
+.hero-content h1, .hero-content p { overflow-wrap: break-word; }
 .hero-content h1 {
   font-family: var(--serif);
   font-weight: 700;
-  font-size: clamp(1.9rem, 4.6vw, 2.7rem);
+  font-size: clamp(1.1rem, 5.6vw, 2.7rem);
   margin-bottom: 18px;
   text-shadow: 0 2px 16px rgba(0,0,0,.4);
 }
@@ -153,7 +157,7 @@ a { color: inherit; text-decoration: none; }
   font-weight: 300;
   font-size: 1.02rem;
   color: #e9e9ec;
-  max-width: 520px;
+  max-width: 600px; /* keeps the subtitle to ~2 lines on desktop */
   margin: 0 auto;
 }
 
@@ -258,38 +262,38 @@ a { color: inherit; text-decoration: none; }
   font-weight: 300;
   margin-bottom: 11px;
 }
-.contact-list a { color: var(--muted); transition: color .2s; }
-.contact-list a:hover { color: var(--accent); }
-.ci { color: var(--accent); flex: none; display: inline-flex; }
+.contact-list a { color: var(--brand); transition: color .2s; }
+.contact-list a:hover { color: var(--brand-dark); }
+.ci { color: var(--brand); flex: none; display: inline-flex; }
 .ci svg { width: 18px; height: 18px; display: block; }
 .social {
   display: inline-grid; place-items: center;
   width: 38px; height: 38px;
-  background: var(--accent);
+  background: var(--brand);
   color: #fff;
   border-radius: 6px;
   transition: background .2s ease, transform .2s ease;
 }
 .social svg { width: 19px; height: 19px; display: block; }
-.social:hover { background: var(--accent-dark); transform: translateY(-2px); }
+.social:hover { background: var(--brand-dark); transform: translateY(-2px); }
 
 /* ---------- Partners marquee ---------- */
-.partners { padding: 84px 0; text-align: center; }
+.partners { padding: 84px 0; text-align: center; background: var(--bg-alt); }
 .marquee {
   display: flex;
   width: 100%;
   overflow: hidden;
   margin-top: 10px;
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
 }
 .marquee-track {
   display: flex;
   align-items: center;
   flex: none;
-  gap: clamp(40px, 7vw, 90px);
-  padding-right: clamp(40px, 7vw, 90px);
-  animation: marquee 32s linear infinite;
+  gap: clamp(28px, 3.5vw, 56px);
+  padding-right: clamp(28px, 3.5vw, 56px);
+  animation: marquee 38s linear infinite;
   will-change: transform;
 }
 .marquee:hover .marquee-track { animation-play-state: paused; }
@@ -297,16 +301,22 @@ a { color: inherit; text-decoration: none; }
   from { transform: translateX(0); }
   to   { transform: translateX(-100%); }
 }
-.partner-logo { flex: none; display: grid; place-items: center; height: 64px; }
+/* Fixed slot so wide wordmarks and round emblems read at a similar size */
+.partner-logo {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 190px;
+  height: 80px;
+  transition: transform .25s ease;
+}
 .partner-logo img {
-  max-height: 64px;
+  max-height: 62px;
+  max-width: 158px;
   width: auto;
   object-fit: contain;
-  filter: grayscale(100%);
-  opacity: .6;
-  transition: filter .25s, opacity .25s;
 }
-.partner-logo:hover img { filter: grayscale(0); opacity: 1; }
+.partner-logo:hover { transform: scale(1.06); }
 
 /* ---------- Scroll reveal ---------- */
 .reveal {
@@ -333,7 +343,10 @@ a { color: inherit; text-decoration: none; }
   }
   .nav.open { max-height: 320px; }
   .nav-link { padding: 14px 5%; border-top: 1px solid var(--line); }
-  .brand-logo { height: 20px; }
+  .brand-logo { height: 16px; }
+  .hero-content { padding: 40px 24px; }
+  .hero-content h1 { font-size: clamp(1.05rem, 4.7vw, 1.6rem); letter-spacing: -.2px; }
+  .hero-content p { font-size: .95rem; }
 
   .split, .split.reverse { grid-template-columns: 1fr; min-height: 0; }
   .split-media { display: none; }
