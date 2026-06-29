@@ -8,6 +8,7 @@ export default function TrustedPartner() {
         <Reveal as="h2" className="section-heading center">
           {trustedPartner.heading}
         </Reveal>
+        <Reveal as="span" className="rule center-rule" delay={80} />
         <Reveal as="p" className="lede center" delay={120}>
           {trustedPartner.body}
         </Reveal>
