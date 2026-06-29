@@ -8,6 +8,7 @@ export const partners = [
     name: "Azur & Partners",
     url: "https://azurandpartners.com/",
     logo: "/assets/partners/azurandpartners.png",
+    small: true, // tall logo — render a bit smaller to match the others
   },
   {
     name: "Vault Asset Management",
@@ -34,5 +35,6 @@ export const partners = [
     name: "UAE Ministry of Investment",
     url: "https://www.investuae.gov.ae/",
     logo: "/assets/partners/UAE-Ministry-of-Investment.png",
+    small: true, // tall logo — render a bit smaller to match the others
   },
 ];

@@ -8,7 +8,7 @@ const REPEATS = 3;
 
 const Logo = ({ partner, hidden }) => (
   <a
-    className={`partner-logo${partner.big ? " partner-logo--lg" : ""}`}
+    className={`partner-logo${partner.big ? " partner-logo--lg" : ""}${partner.small ? " partner-logo--sm" : ""}`}
     href={partner.url}
     target="_blank"
     rel="noopener"

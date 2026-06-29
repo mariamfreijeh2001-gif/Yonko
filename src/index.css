@@ -164,36 +164,6 @@ a { color: inherit; text-decoration: none; }
 }
 .hero-break { display: inline; } /* desktop: forces the 2-line break */
 
-.scroll-cue {
-  position: absolute;
-  left: 50%; bottom: 26px;
-  transform: translateX(-50%);
-  z-index: 2;
-  opacity: .85;
-  transition: opacity .3s;
-}
-.scroll-cue:hover { opacity: 1; }
-.scroll-cue-mouse {
-  display: block;
-  width: 24px; height: 38px;
-  border: 2px solid rgba(255,255,255,.75);
-  border-radius: 13px;
-}
-.scroll-cue-dot {
-  display: block;
-  width: 4px; height: 8px;
-  margin: 6px auto 0;
-  background: #fff;
-  border-radius: 2px;
-  animation: cue 1.8s ease-in-out infinite;
-}
-@keyframes cue {
-  0%   { opacity: 0; transform: translateY(0); }
-  30%  { opacity: 1; }
-  60%  { opacity: 1; transform: translateY(10px); }
-  100% { opacity: 0; transform: translateY(12px); }
-}
-
 /* ---------- Trusted Partner ---------- */
 .trusted { padding: 84px 0; }
 
@@ -323,6 +293,8 @@ a { color: inherit; text-decoration: none; }
 /* A single wide logo (ADIO) rendered larger so its fine text reads clearly */
 .partners .partner-logo--lg { width: 270px; }
 .partners .partner-logo--lg img { max-height: 92px; max-width: 250px; }
+/* Tall logos (Ministry, Azur) rendered smaller to match the others */
+.partners .partner-logo--sm img { max-height: 54px; max-width: 128px; }
 
 /* ---------- Scroll reveal ---------- */
 .reveal {
@@ -367,11 +339,11 @@ a { color: inherit; text-decoration: none; }
   .marquee-track { gap: 26px; padding-right: 26px; }
   .partners .partner-logo--lg { width: 200px; }
   .partners .partner-logo--lg img { max-height: 64px; max-width: 184px; }
+  .partners .partner-logo--sm img { max-height: 38px; max-width: 100px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .marquee-track { animation: none; }
-  .scroll-cue-dot { animation: none; }
   .hero-bg { transform: none !important; }
   .hero-content { transform: none !important; opacity: 1 !important; }
   .reveal { opacity: 1; transform: none; transition: none; }

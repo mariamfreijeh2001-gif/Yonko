@@ -12,9 +12,6 @@ export default function Hero() {
         <h1>{hero.title}</h1>
         <p>{hero.subtitle[0]}{" "}<br className="hero-break" />{hero.subtitle[1]}</p>
       </div>
-      <a className="scroll-cue" href="#what-we-do" aria-label="Scroll to content">
-        <span className="scroll-cue-mouse"><span className="scroll-cue-dot"></span></span>
-      </a>
     </section>
   );
 }
