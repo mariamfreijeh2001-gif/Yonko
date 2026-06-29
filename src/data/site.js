@@ -14,7 +14,7 @@ export const nav = [
 export const hero = {
   title: "Trust. Trigger. Transform.",
   subtitle:
-    "Yonko Capital is a boutique advisory firm unlocking value for selective family offices and investors across the Middle East, Europe and Asia.",
+    "Yonko Capital is a discreet Emirati partner and trusted advisor to family offices and private investors, delivering end-to-end solutions across complex situations.",
 };
 
 export const trustedPartner = {
